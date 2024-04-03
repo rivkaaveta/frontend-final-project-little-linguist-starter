@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Matching Games</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0  ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background-color: #fff;
+  }
+
+  .column {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .english-words, .hebrew-words {
+    width: 100%;
+  }
+
+  .word {
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #ddd;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+    
+  <div class="column english-words">
+    <div class="word" *ngFor="let word of englishGameWords">{{ word }}</div>
+  </div>
+  <div class="column hebrew-words">
+    <div class="word" *ngFor="let word of hebrewGameWords">{{ word }}</div>
+  </div>
+</div>
+
+</body>
+</html>

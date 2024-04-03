@@ -1,0 +1,8 @@
+.card-container {
+    min-width: 120px;
+    min-height: 68px;
+  }
+  
+.star{
+    color: yellow;
+}

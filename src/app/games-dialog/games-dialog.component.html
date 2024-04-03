@@ -1,0 +1,20 @@
+<div mat-dialog-content>
+  <h3>Choose game</h3>
+  <mat-form-field>
+    <mat-label> Choose game to play</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option *ngFor="let game of games" [value]="game">
+        {{ game.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div ngif="selected">
+    <p>Difficulty: {{selected?.gamedifficulty}}</p>
+    <p>Description: {{selected?.description}}</p>
+  </div>
+  <br/>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" cdkFocusInitial [mat-dialog-close]="true"[routerLink]="[selected?.url,id]">Play</button>
+</div>
