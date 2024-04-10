@@ -40,7 +40,7 @@ export class MatchingGameComponent implements OnInit {
     }
 
     if (this.currentcategory) {
-      let shuffledWords = [...this.currentcategory?.words].sort(
+      const shuffledWords = [...this.currentcategory?.words].sort(
         () => Math.random() - 0.5
       );
       this.gameWords = shuffledWords.splice(0, 5);

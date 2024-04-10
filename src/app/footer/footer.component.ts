@@ -6,11 +6,9 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [
-    CommonModule, MatIconModule, RouterLink
-  ],
+  imports: [CommonModule, MatIconModule, RouterLink],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FooterComponent { }
+export class FooterComponent {}

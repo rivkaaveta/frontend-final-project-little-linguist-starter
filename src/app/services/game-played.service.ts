@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { GamePlayed } from '../../shared/model/game-played';
-import { GameProfile } from '../../shared/model/game-profile';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,7 @@ export class GamePlayedService {
   constructor() { }
 
   private getNextId() : number {
-    let nextIdString = localStorage.getItem(this.NEXT_ID_KEY);
+    const nextIdString = localStorage.getItem(this.NEXT_ID_KEY);
 
     return nextIdString ? parseInt(nextIdString) : 0;
   }
@@ -27,8 +26,8 @@ export class GamePlayedService {
   }
 
   private getGames() : Map<number, GamePlayed> {
-    let gameString = localStorage.getItem(this.GAME_KEY);
-    let idToGame = new Map<number, GamePlayed>();
+    const gameString = localStorage.getItem(this.GAME_KEY);
+    const idToGame = new Map<number, GamePlayed>();
 
     if (gameString) {
       JSON.parse(gameString).forEach((game : GamePlayed) => {
@@ -52,7 +51,7 @@ export class GamePlayedService {
     let nextId = this.getNextId();
     newGameData.gameId = nextId
 
-    let gamesData = this.getGames();
+    const gamesData = this.getGames();
     gamesData.set(nextId, newGameData);
     this.setGames(gamesData);
 

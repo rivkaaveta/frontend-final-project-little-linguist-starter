@@ -9,7 +9,7 @@ export class PointsService {
   private readonly NEXT_ID_KEY = 'pointId';
 
   private getPoints() : Map<number, GamePlayed>{
-    let pointsString = localStorage.getItem(this.POINTS_KEY);
+    const pointsString = localStorage.getItem(this.POINTS_KEY);
 
     if (!pointsString) {
       return new Map<number, GamePlayed>();
@@ -19,7 +19,7 @@ export class PointsService {
   }
 
   private getNextId() : number {
-    let nextIdString = localStorage.getItem(this.NEXT_ID_KEY); 
+    const nextIdString = localStorage.getItem(this.NEXT_ID_KEY); 
 
     return nextIdString ? parseInt(nextIdString) : 0;
   }
@@ -43,7 +43,7 @@ export class PointsService {
     game.gameId = this.getNextId();
     
 
-    let pointsMap = this.getPoints();
+    const pointsMap = this.getPoints();
     pointsMap.set(game.gameId, game);
 
     this.setPoints(pointsMap);

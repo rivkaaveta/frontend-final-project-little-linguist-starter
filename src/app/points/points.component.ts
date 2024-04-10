@@ -1,4 +1,4 @@
-import { Component,Input, OnInit } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { PointsService } from '../services/points.service';
 import { CommonModule } from '@angular/common';
 
